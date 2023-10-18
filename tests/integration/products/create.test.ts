@@ -6,6 +6,7 @@ import app from '../../../src/app';
 chai.use(chaiHttp);
 
 describe('POST /products', function () {
+    afterEach(function () { sinon.restore(); });
     it('should return status 201 and a product object', async function () {
     const body = {
         name: 'product',
